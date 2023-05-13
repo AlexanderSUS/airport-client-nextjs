@@ -1,5 +1,12 @@
-import './globals.css'
 import { Inter } from 'next/font/google'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import Header from './Header';
+import CssBaseline  from '../components/mui-use-client/CssBaseline';
+import Container from '../components/mui-use-client/Container';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <CssBaseline />
+        <Header />
+          <Container maxWidth='xl' sx={{ py: 2 }}>
+            {children}
+          </Container>
+      </body>
     </html>
   )
 }
